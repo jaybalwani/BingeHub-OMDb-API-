@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>BingeHub</title>
+    <script
+      src="https://kit.fontawesome.com/52b9614d93.js"
+      crossorigin="anonymous"
+    ></script>
+    <link rel="icon" href="./assets/android-chrome-512x512.png" />
+    <link rel="stylesheet" href="./style.css" />
+    <style>
+      @import url("https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;700;900&family=Roboto:wght@300;400;500;700;900&display=swap");
+    </style>
+    <script src="./app.js" defer></script>
+  </head>
+  <body>
+    <section id="landing">
+      <div class="container">
+        <div class="row">
+          <nav>
+            <figure class="nav__logo">
+              <img src="./assets/logo.png" alt="" class="nav__logo--img" />
+            </figure>
+            <div class="nav__links">
+              <a href="" class="nav__link">Home</a>
+              <a href="" class="nav__link">About</a>
+              <a href="" class="nav__link nav__link--primary">Contact</a>
+            </div>
+          </nav>
+          <div class="search">
+            <h1 class="green">Find your movie or show</h1>
+            <form class="search__bar" onsubmit="renderResults(); return false">
+              <input
+                class="search__bar--input"
+                type="text"
+                placeholder="Drop your favourite title."
+              />
+              <button type="submit" class="search__bar--button">
+                <i class="fa-solid fa-magnifying-glass green"></i>
+              </button>
+            </form>
+          </div>
+        </div>
+      </div>
+    </section>
+    <section id="results">
+      <div class="loading__bg">
+        <div class="loading__bar"></div>
+      </div>
+      <div class="container">
+        <div class="row">
+          <div class="results__panel">
+            <div class="results__panel--query">
+              <h2 class="query-result"> Search results: </h2>
+            </div>
+            <div class="results__panel--filter">
+              <div class="filter__info">
+                <h2 class="year__title">
+                  Release Year: <span class="year-render green">2003</span>
+                </h2>
+                <div class="filter__toggle">
+                  <input type="checkbox" id="check" class="filter__toggle--checkbox" onchange="toggleFilterStatus()">
+                  <label for="check" class="toggle__button"></label>
+                </div>
+              </div>
+              <input
+                type="range"
+                class="slider"
+                min="1900"
+                max="2023"
+                value="2003"
+                onchange="addYear(event);"
+              />
+            </div>
+          </div>
+          <div class="results__area">
+            <!-- <div class="result">
+                <figure class="result__cover">
+                    <img src="./assets/sample_movie.jpg" alt="" class="result__cover--img">
+                </figure>
+                <h3 class="result__title">Fast & Furious 6</h3>
+                <p class="result__year">2013</p>
+            </div>
+            <div class="result">
+                <figure class="result__cover">
+                    <img src="./assets/sample_movie.jpg" alt="" class="result__cover--img">
+                </figure>
+                <h3 class="result__title">Fast & Furious 6</h3>
+                <p class="result__year">2013</p>
+            </div>
+            <div class="result">
+                <figure class="result__cover">
+                    <img src="./assets/sample_movie.jpg" alt="" class="result__cover--img">
+                </figure>
+                <h3 class="result__title">Fast & Furious 6</h3>
+                <p class="result__year">2013</p>
+            </div>
+            <div class="result">
+                <figure class="result__cover">
+                    <img src="./assets/sample_movie.jpg" alt="" class="result__cover--img">
+                </figure>
+                <h3 class="result__title">Fast & Furious 6</h3>
+                <p class="result__year">2013</p>
+            </div>
+            <div class="result">
+                <figure class="result__cover">
+                    <img src="./assets/sample_movie.jpg" alt="" class="result__cover--img">
+                </figure>
+                <h3 class="result__title">Fast & Furious 6</h3>
+                <p class="result__year">2013</p>
+            </div>
+            <div class="result">
+                <figure class="result__cover">
+                    <img src="./assets/sample_movie.jpg" alt="" class="result__cover--img">
+                </figure>
+                <h3 class="result__title">Fast & Furious 6</h3>
+                <p class="result__year">2013</p>
+            </div> -->
+          </div>
+        </div>
+      </div>
+    </section>
+  </body>
+</html>
