@@ -2,6 +2,7 @@ const resultsAreaEl = document.querySelector('.results__area')
 const searchInput = document.querySelector('.search__bar--input') 
 const yearFilter = document.querySelector('.slider')
 let filterStatus = false
+let searchValue
 
 async function renderResults() {
     if (searchInput.value){
@@ -9,7 +10,10 @@ async function renderResults() {
         addQuery(searchInput.value)
     }
     
-    let searchValue = searchInput.value
+    if(searchInput.value)
+    {
+        searchValue = searchInput.value
+    }
 
     const resultFetch = await fetch(`https://www.omdbapi.com/?apikey=3bdb36d&s=${searchValue}`);
     const result = await resultFetch.json();
